@@ -2,16 +2,19 @@
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
+    "strict": true,
     "outDir": "dist",
     "sourceMap": false,
     "allowSyntheticDefaultImports": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "baseUrl": ".",
-    "paths": {
-      "*": [
-        "node_modules/",
+    "paths": {  
+      "@/*": [
+        "src/*"
       ],
-      "typings/*": [
-        "src/typings/*"
+      "modules/*": [
+        "src/modules/*"
       ]
     },
   },
