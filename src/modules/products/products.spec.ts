@@ -1,21 +1,22 @@
 import { findProducts } from './products'
 import { Product } from './types/Product'
+import * as lowdb from 'lowdb'
+import * as FileSync from 'lowdb/adapters/FileSync'
 
-jest.mock('./products.ts', () => ({
-  findProducts: jest.fn(),
-}))
+jest.mock('lowdb', () => {
+  return () => ({
+    get: jest.fn().mockReturnValue({
+      value: () => ([])
+    })
+  })
+})
 
-const product: Product = new Product('samsumg', 999)
+jest.mock('lowdb/adapters/FileSync', () => {
+  return function() {}
+})
 
 describe('products', () => {
-  beforeAll(() => {
-    (findProducts as jest.Mock).mockReturnValue([ product ])
-  })
-
   it('findProducts should return all products', () => {
-    // a really useless test
-    findProducts()
-
-    expect(findProducts).toHaveReturnedWith([ product ])
+    expect(findProducts()).toEqual([])
   })
 })
