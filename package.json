@@ -2,7 +2,7 @@
   "name": "node-typescript-jest-starter",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "rimraf dist && tsc",
     "start": "node dist/index.js",
@@ -10,6 +10,10 @@
     "test": "jest --watch",
     "lint": "eslint ./src/**/*.ts",
     "coverage": "jest --coverage"
+  },
+  "_moduleAliases": {
+    "@": "dist",
+    "@modules": "dist/modules"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +28,7 @@
     "cross-env": "^6.0.3",
     "eslint": "^6.8.0",
     "jest": "^23.6.0",
+    "module-alias": "2.2.2",
     "nodemon": "^1.18.9",
     "rimraf": "^2.6.3",
     "ts-jest": "^23.10.5",
