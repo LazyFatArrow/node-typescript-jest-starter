@@ -1,4 +1,18 @@
 import 'module-alias/register'
-import { convert, Currency } from '@modules/currency-converter'
+import * as express from 'express'
+import * as bodyParser from 'body-parser'
+import { productsRouter } from './modules/products'
 
-console.log(convert(3, Currency.USD, { [Currency.USD]: 3 }))
+const app = express()
+
+app.use(bodyParser.json())
+
+app.use('/products', productsRouter())
+
+const boot = (): void => {
+  app.listen(5000, () => {
+    console.log('server started')
+  })
+}
+
+boot()
