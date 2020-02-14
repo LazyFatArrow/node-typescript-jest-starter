@@ -1,10 +1,11 @@
 import { Product } from './types/Product'
+import * as lowdb from 'lowdb'
+import * as FileSync from 'lowdb/adapters/FileSync'
+import * as path from 'path'
 
-const products: Product[] = [
-  new Product('ifon', 999999),
-  new Product('hammer', 3),
-]
+const adapter = new FileSync(path.resolve(__dirname, 'products.db.json'))
+const db = lowdb(adapter)
 
 export const findProducts = (): Product[] => {
-  return products
+  return db.get('products').value()
 }
