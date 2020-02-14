@@ -28,7 +28,7 @@
     "@typescript-eslint/parser": "^2.14.0",
     "cross-env": "^6.0.3",
     "eslint": "^6.8.0",
-    "jest": "^23.6.0",
+    "jest": "25.1.0",
     "module-alias": "2.2.2",
     "nodemon": "^1.18.9",
     "rimraf": "^2.6.3",
