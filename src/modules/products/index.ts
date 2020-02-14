@@ -4,7 +4,7 @@ import { handleGetProducts } from './handlers'
 export const productsRouter = (): Router => {
   const router = Router()
 
-  router.get('/products', handleGetProducts)
+  router.get('/', handleGetProducts)
 
   return router
 }
