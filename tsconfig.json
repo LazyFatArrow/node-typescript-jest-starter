@@ -1,19 +1,19 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
+    "target": "ES6",
+    "module": "CommonJS",
     "strict": true,
     "outDir": "dist",
     "sourceMap": false,
     "allowSyntheticDefaultImports": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {  
       "@/*": [
         "src/*"
       ],
-      "modules/*": [
+      "@modules/*": [
         "src/modules/*"
       ]
     },
@@ -22,6 +22,6 @@
     "src/**/*.ts"
   ],
   "exclude": [
-    "src/test/**/*.spec.ts"
+    "src/**/*.spec.ts"
   ]
 }
