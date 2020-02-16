@@ -8,6 +8,9 @@ const app = express()
 app.use(bodyParser.json())
 
 app.use('/products', productsRouter())
+app.get('/', (req, res) => {
+  return res.send('Hello there.')
+})
 
 const boot = (): void => {
   app.listen(5000, () => {
